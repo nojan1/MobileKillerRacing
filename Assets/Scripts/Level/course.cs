@@ -86,15 +86,17 @@ namespace KillerMobileRacing.Level {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class CourseSpawnpoint {
         
-        private string spawnAtField;
+        private int spawnAtField;
         
-        private float directionField;
+        private bool spawnAtFieldSpecified;
+        
+        private decimal directionField;
         
         private bool directionFieldSpecified;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string SpawnAt {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int SpawnAt {
             get {
                 return this.spawnAtField;
             }
@@ -104,8 +106,19 @@ namespace KillerMobileRacing.Level {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SpawnAtSpecified {
+            get {
+                return this.spawnAtFieldSpecified;
+            }
+            set {
+                this.spawnAtFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public float Direction {
+        public decimal Direction {
             get {
                 return this.directionField;
             }
@@ -134,19 +147,21 @@ namespace KillerMobileRacing.Level {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public partial class CourseTrackpiece {
         
-        private string idField;
+        private int idField;
         
-        private string posXField;
+        private int posXField;
         
-        private string posYField;
+        private int posYField;
         
-        private string posZField;
+        private int posZField;
         
-        private string pieceIdField;
+        private int rotationField;
+        
+        private string pieceNameField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string Id {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int Id {
             get {
                 return this.idField;
             }
@@ -156,8 +171,8 @@ namespace KillerMobileRacing.Level {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string PosX {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int PosX {
             get {
                 return this.posXField;
             }
@@ -167,8 +182,8 @@ namespace KillerMobileRacing.Level {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string PosY {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int PosY {
             get {
                 return this.posYField;
             }
@@ -178,8 +193,8 @@ namespace KillerMobileRacing.Level {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="integer")]
-        public string PosZ {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int PosZ {
             get {
                 return this.posZField;
             }
@@ -190,12 +205,23 @@ namespace KillerMobileRacing.Level {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string PieceId {
+        public int Rotation {
             get {
-                return this.pieceIdField;
+                return this.rotationField;
             }
             set {
-                this.pieceIdField = value;
+                this.rotationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string PieceName {
+            get {
+                return this.pieceNameField;
+            }
+            set {
+                this.pieceNameField = value;
             }
         }
     }

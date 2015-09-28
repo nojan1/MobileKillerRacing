@@ -7,7 +7,7 @@
         <xs:element name="Spawnpoint" minOccurs="1" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="SpawnAt" type="xs:integer" minOccurs="0" />
+              <xs:element name="SpawnAt" type="xs:int" minOccurs="0" />
               <xs:element name="Direction" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -18,11 +18,12 @@
               <xs:element name="Trackpiece" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="Id" type="xs:integer" minOccurs="0" />
-                    <xs:element name="PosX" type="xs:integer" minOccurs="0" />
-                    <xs:element name="PosY" type="xs:integer" minOccurs="0" />
-                    <xs:element name="PosZ" type="xs:integer" minOccurs="0" />
-                    <xs:element name="PieceId" type="xs:string" minOccurs="0" />
+                    <xs:element name="Id" type="xs:int" minOccurs="1" />
+                    <xs:element name="PosX" type="xs:int" minOccurs="1" />
+                    <xs:element name="PosY" type="xs:int" minOccurs="1" />
+                    <xs:element name="PosZ" type="xs:int" minOccurs="1" />
+					<xs:element name="Rotation" type="xs:int" minOccurs="1" />
+                    <xs:element name="PieceName" type="xs:string" minOccurs="1" />
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>

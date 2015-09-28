@@ -2,7 +2,7 @@
 <Course version="1.0">
 	<MapPack>STANDARD</MapPack>
 	<Spawnpoint>
-		<SpawnAt>1</SpawnAt>
+		<SpawnAt>2</SpawnAt>
 		<Direction>90</Direction>
 	</Spawnpoint>
 	<Track>
@@ -10,29 +10,41 @@
 			<Id>1</Id>
 			<PosX>0</PosX>
 			<PosY>0</PosY>
+			<Rotation>0</Rotation>
 			<PosZ>0</PosZ>
-			<PieceId>GOAL</PieceId>
+			<PieceName>GOAL</PieceName>
 		</Trackpiece>
 		<Trackpiece>
 			<Id>2</Id>
-			<PosX>20</PosX>
+			<PosX>0</PosX>
 			<PosY>0</PosY>
-			<PosZ>0</PosZ>
-			<PieceId>STRAIGHT</PieceId>
+			<PosZ>20</PosZ>
+			<Rotation>0</Rotation>
+			<PieceName>STRAIGHT</PieceName>
 		</Trackpiece>
 		<Trackpiece>
 			<Id>3</Id>
-			<PosX>30</PosX>
+			<PosX>0</PosX>
 			<PosY>0</PosY>
-			<PosZ>0</PosZ>
-			<PieceId>STRAIGHT</PieceId>
+			<PosZ>30</PosZ>
+			<Rotation>0</Rotation>
+			<PieceName>STRAIGHT</PieceName>
 		</Trackpiece>
 		<Trackpiece>
 			<Id>4</Id>
-			<PosX>40</PosX>
+			<PosX>0</PosX>
 			<PosY>0</PosY>
-			<PosZ>0</PosZ>
-			<PieceId>STRAIGHT</PieceId>
+			<PosZ>40</PosZ>
+			<Rotation>0</Rotation>
+			<PieceName>STRAIGHT</PieceName>
+		</Trackpiece>
+		<Trackpiece>
+			<Id>5</Id>
+			<PosX>20</PosX>
+			<PosY>0</PosY>
+			<PosZ>60</PosZ>
+			<Rotation>90</Rotation>
+			<PieceName>STRAIGHT</PieceName>
 		</Trackpiece>
 	</Track>
 </Course>
