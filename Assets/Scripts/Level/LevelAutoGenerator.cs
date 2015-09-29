@@ -67,7 +67,7 @@ namespace KillerMobileRacing.Level
         private Vector2 BuildBendLine(Vector2 currentPoint, Vector2 currentAnchor, List<CourseTrackpiece> trackPieces, ref float currentDirection)
         {
             //TODO: Will one bend be enough? How do we now?
-            return BuildLine(currentPoint, currentAnchor, trackPieces, ref currentDirection);
+            return currentPoint;
         }
 
         private Vector2 BuildLine(Vector2 currentPoint, Vector2 currentAnchor, List<CourseTrackpiece> trackPieces, ref float currentDirection)
@@ -75,21 +75,23 @@ namespace KillerMobileRacing.Level
             var straightPiece = TrackPiecesInfo.Pieces.First(p => p.Name == "STRAIGHT");
             currentDirection = Vector2.Angle(currentPoint, currentAnchor);
 
-            while(Vector2.Distance(currentPoint, currentAnchor) >= straightPiece.WidthZ)
+            float initialDistance = Vector2.Distance(currentPoint, currentAnchor);
+
+            while (Vector2.Distance(currentPoint, currentAnchor) >= straightPiece.WidthZ && Vector2.Distance(currentPoint, currentAnchor) <= initialDistance) 
             {
                 trackPieces.Add(new CourseTrackpiece
                 {
                     Id = trackPieces.Count,
                     PosX = (int)currentPoint.x,
-                    PosY = (int)currentPoint.y,
-                    PosZ = 0,
+                    PosY = 0,
+                    PosZ = (int)currentPoint.y,
                     Rotation = (int)currentDirection,
                     PieceName = "STRAIGHT"
                 });
 
                 currentPoint = new Vector2(
                         Mathf.Round(Mathf.Cos(currentDirection) * straightPiece.WidthX) + currentPoint.x,
-                        Mathf.Round(Mathf.Cos(currentDirection) * straightPiece.WidthX) + currentPoint.y
+                        Mathf.Round(Mathf.Sin(currentDirection) * straightPiece.WidthZ) + currentPoint.y
                     );
             }
 
