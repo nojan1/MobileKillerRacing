@@ -18,8 +18,10 @@ public class LevelCreator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        var parser = new CourseParser();
-        var course = parser.ParseContent(CourseFile.text);
+        // var parser = new CourseParser();
+        //var course = parser.ParseContent(CourseFile.text);
+
+        var course = new LevelAutoGenerator().Generate(50f);
 
         foreach(var piece in course.Track)
         {
@@ -39,6 +41,7 @@ public class LevelCreator : MonoBehaviour {
             }
         }
 
+        //Place player
         var player = GameObject.FindGameObjectWithTag("Player");
         if(player != null)
         {

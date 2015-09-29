@@ -3,7 +3,7 @@
 	<MapPack>STANDARD</MapPack>
 	<Spawnpoint>
 		<SpawnAt>2</SpawnAt>
-		<Direction>90</Direction>
+		<Direction>0</Direction>
 	</Spawnpoint>
 	<Track>
 		<Trackpiece>
@@ -41,6 +41,30 @@
 		<Trackpiece>
 			<Id>5</Id>
 			<PosX>20</PosX>
+			<PosY>0</PosY>
+			<PosZ>60</PosZ>
+			<Rotation>90</Rotation>
+			<PieceName>STRAIGHT</PieceName>
+		</Trackpiece>
+		<Trackpiece>
+			<Id>6</Id>
+			<PosX>30</PosX>
+			<PosY>0</PosY>
+			<PosZ>60</PosZ>
+			<Rotation>90</Rotation>
+			<PieceName>STRAIGHT</PieceName>
+		</Trackpiece>
+		<Trackpiece>
+			<Id>7</Id>
+			<PosX>40</PosX>
+			<PosY>0</PosY>
+			<PosZ>60</PosZ>
+			<Rotation>90</Rotation>
+			<PieceName>STRAIGHT</PieceName>
+		</Trackpiece>
+		<Trackpiece>
+			<Id>8</Id>
+			<PosX>50</PosX>
 			<PosY>0</PosY>
 			<PosZ>60</PosZ>
 			<Rotation>90</Rotation>
