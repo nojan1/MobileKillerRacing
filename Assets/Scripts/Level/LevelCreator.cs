@@ -18,10 +18,10 @@ public class LevelCreator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        // var parser = new CourseParser();
-        //var course = parser.ParseContent(CourseFile.text);
+        var parser = new CourseParser();
+        var course = parser.ParseContent(CourseFile.text);
 
-        var course = new LevelAutoGenerator().Generate(200f);
+        //var course = new LevelAutoGenerator().Generate(200f);
 
         foreach(var piece in course.Track)
         {
@@ -46,7 +46,7 @@ public class LevelCreator : MonoBehaviour {
         if(player != null)
         {
             player.transform.position = new Vector3(course.SpawnTrackpiece.PosX,
-                                                    course.SpawnTrackpiece.PosY,
+                                                    course.SpawnTrackpiece.PosY + 5,
                                                     course.SpawnTrackpiece.PosZ);
             
             player.transform.rotation = Quaternion.Euler(new Vector3(0, (float)course.Spawnpoint.Direction, 0));
