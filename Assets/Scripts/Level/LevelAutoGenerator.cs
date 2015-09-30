@@ -67,6 +67,54 @@ namespace KillerMobileRacing.Level
         private Vector2 BuildBendLine(Vector2 currentPoint, Vector2 currentAnchor, List<CourseTrackpiece> trackPieces, ref float currentDirection)
         {
             //TODO: Will one bend be enough? How do we now?
+
+            //The calculation of how the bends should be calculated are based on the geometry of a triangle
+
+            var bendPoint = new Vector2(currentAnchor.x,
+                                        currentPoint.y);
+
+            float localDirection = Vector2.Angle(currentPoint, bendPoint);
+            BuildLine(currentPoint, bendPoint, trackPieces, ref localDirection);
+
+            //Add the corner here
+            TrackPieceInfo piece;
+            if(currentPoint.x == bendPoint.x)
+            {
+                if(currentPoint.y > bendPoint.y)
+                {
+                    piece = TrackPiecesInfo.Pieces.First(p => p.Name == "BEND_90_LEFT");
+                }
+                else
+                {
+                    piece = TrackPiecesInfo.Pieces.First(p => p.Name == "BEND_90_RIGHT");
+                }
+            }
+            else
+            {
+                if (currentPoint.x > bendPoint.x)
+                {
+                    piece = TrackPiecesInfo.Pieces.First(p => p.Name == "BEND_90_LEFT");
+                }
+                else
+                {
+                    piece = TrackPiecesInfo.Pieces.First(p => p.Name == "BEND_90_RIGHT");
+                }
+            }
+
+            trackPieces.Add(new CourseTrackpiece
+            {
+                Id = trackPieces.Count,
+                PosX = (int)bendPoint.x,
+                PosY = 0,
+                PosZ = (int)bendPoint.y,
+                Rotation = 0, //TODO fix
+                PieceName = piece.Name
+            });
+
+            localDirection = Vector2.Angle(bendPoint, currentAnchor);
+            BuildLine(bendPoint, currentAnchor, trackPieces, ref localDirection);
+
+            currentDirection = localDirection;
             return currentPoint;
         }
 

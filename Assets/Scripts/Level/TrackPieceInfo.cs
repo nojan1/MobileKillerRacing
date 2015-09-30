@@ -29,10 +29,29 @@ namespace KillerMobileRacing.Level
                     Raise = 0,
                     Facing = 0
                 });
+
                 retVal.Add(new TrackPieceInfo
                 {
                     Name = "GOAL",
                     WidthX = 10,
+                    WidthZ = 20,
+                    Raise = 0,
+                    Facing = 0
+                });
+
+                retVal.Add(new TrackPieceInfo
+                {
+                    Name = "BEND_90_LEFT",
+                    WidthX = 20,
+                    WidthZ = 20,
+                    Raise = 0,
+                    Facing = 0
+                });
+
+                retVal.Add(new TrackPieceInfo
+                {
+                    Name = "BEND_90_RIGHT",
+                    WidthX = 20,
                     WidthZ = 20,
                     Raise = 0,
                     Facing = 0

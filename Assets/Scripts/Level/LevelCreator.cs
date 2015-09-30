@@ -21,7 +21,7 @@ public class LevelCreator : MonoBehaviour {
         // var parser = new CourseParser();
         //var course = parser.ParseContent(CourseFile.text);
 
-        var course = new LevelAutoGenerator().Generate(50f);
+        var course = new LevelAutoGenerator().Generate(200f);
 
         foreach(var piece in course.Track)
         {
