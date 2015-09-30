@@ -107,7 +107,7 @@ namespace KillerMobileRacing.Level
                 PosX = (int)bendPoint.x,
                 PosY = 0,
                 PosZ = (int)bendPoint.y,
-                Rotation = 0, //TODO fix
+                Rotation = (int)localDirection + (int)piece.RotationOffset,
                 PieceName = piece.Name
             });
 
@@ -133,7 +133,7 @@ namespace KillerMobileRacing.Level
                     PosX = (int)currentPoint.x,
                     PosY = 0,
                     PosZ = (int)currentPoint.y,
-                    Rotation = (int)currentDirection,
+                    Rotation = (int)currentDirection + (int)straightPiece.RotationOffset,
                     PieceName = "STRAIGHT"
                 });
 

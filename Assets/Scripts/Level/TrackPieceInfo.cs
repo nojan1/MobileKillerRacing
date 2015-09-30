@@ -11,7 +11,7 @@ namespace KillerMobileRacing.Level
         public int WidthX { get; set; }
         public int WidthZ { get; set; }
         public float Raise { get; set; }
-        public float Facing { get; set; }
+        public float RotationOffset { get; set; }
     }
 
     static class TrackPiecesInfo
@@ -27,7 +27,7 @@ namespace KillerMobileRacing.Level
                     WidthX = 10,
                     WidthZ = 10,
                     Raise = 0,
-                    Facing = 0
+                    RotationOffset = 90
                 });
 
                 retVal.Add(new TrackPieceInfo
@@ -36,7 +36,7 @@ namespace KillerMobileRacing.Level
                     WidthX = 10,
                     WidthZ = 20,
                     Raise = 0,
-                    Facing = 0
+                    RotationOffset = 0
                 });
 
                 retVal.Add(new TrackPieceInfo
@@ -45,7 +45,7 @@ namespace KillerMobileRacing.Level
                     WidthX = 20,
                     WidthZ = 20,
                     Raise = 0,
-                    Facing = 0
+                    RotationOffset = 0
                 });
 
                 retVal.Add(new TrackPieceInfo
@@ -54,7 +54,7 @@ namespace KillerMobileRacing.Level
                     WidthX = 20,
                     WidthZ = 20,
                     Raise = 0,
-                    Facing = 0
+                    RotationOffset = 0
                 });
 
                 return retVal;
